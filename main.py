@@ -16,7 +16,7 @@ user = 'juan.treviranus'
 psw = '34813589jmt'
 
 url = 'https://gomedisys.welii.com/'
-cont = 0
+cont = int(0)
 #SELECTORES:
 
 selector_usuario = '#uiUserName'
@@ -65,13 +65,17 @@ time.sleep(1)
 
 for n in range(0, 172):
     cont += 1
-    if cont != 160 or 163 or 166 or 167 or 171 or 170 or 172:
+    if cont != 162 and cont != 163 and cont != 166 and cont != 167 and cont != 171 and cont != 170 and cont != 172:
         driver.find_element(By.XPATH, f'//*[@id="ddActivity_listbox"]/li[{cont}]').click()
         time.sleep(0.05)
-time.sleep(1)
-driver.find_element(By.CSS_SELECTOR, aniadir_arch_adj).click()
+
+
+
+
 time.sleep(1)
 driver.find_element(By.XPATH, filtros_por_egreso).click()
+time.sleep(1)
+driver.find_element(By.CSS_SELECTOR, aniadir_arch_adj).click()
 time.sleep(1)
 driver.find_element(By.CSS_SELECTOR, desde).send_keys('21/7/2022')
 time.sleep(1)
